@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SeasonalProduce</string>
+
+    <string-array name="options">
+        <item>Fruit</item>
+        <item>Vegetables</item>
+
+    </string-array>
+    <string name="title_activity_produce_category">ProduceCategoryActivity</string>
 </resources>
