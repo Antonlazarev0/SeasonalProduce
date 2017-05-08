@@ -117,7 +117,7 @@ public class Vegetable {
                     "Spring, Summer, Autumn, Winter",
                     R.drawable.peas),
 
-            new Vegetable("Potatoe",
+            new Vegetable("Potato",
                     "The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. The word \"potato\" may refer either to the plant itself or to the edible tuber. he many different varieties available are subtly different in flavour and texture, and lend themselves best to different forms of cooking.",
                     "Spring, Summer, Autumn, Winter",
                     R.drawable.potato),
