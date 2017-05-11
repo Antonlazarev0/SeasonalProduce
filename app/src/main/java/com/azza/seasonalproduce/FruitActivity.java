@@ -60,21 +60,3 @@ public class FruitActivity extends AppCompatActivity {
     }
 }
 
-/*Fruit fruit = Fruit.fruits[fruitNo];
-
-        //Populate the fruit image
-        ImageView photo = (ImageView) findViewById(R.id.photo);
-        photo.setImageResource(fruit.getImageResourceId());
-        photo.setContentDescription(fruit.getName());
-
-        //Populate the fruit name
-        TextView name = (TextView) findViewById(R.id.name);
-        name.setText(fruit.getName());
-
-        //Populate seasons
-        TextView seasons = (TextView) findViewById(R.id.seasons);
-        seasons.setText(fruit.getSeason());
-
-        //Populate the fruit description
-        TextView description = (TextView) findViewById(R.id.description);
-        description.setText(fruit.getDescription());*/
