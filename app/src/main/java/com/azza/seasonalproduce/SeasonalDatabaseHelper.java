@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 class SeasonalDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "seasonal"; //name of database
-    private static final int DB_VERSION = 3; //database version
+    private static final int DB_VERSION = 1; //database version
 
     SeasonalDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -28,6 +28,8 @@ class SeasonalDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        /*Database version 1*/
         if(oldVersion < 1) {
             db.execSQL("CREATE TABLE FRUIT ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -121,10 +123,13 @@ class SeasonalDatabaseHelper extends SQLiteOpenHelper {
                     "Summer",
                     R.drawable.plum);
         }
+
+        /*Database version 2*/
         if (oldVersion < 2) {
             db.execSQL("ALTER TABLE FRUIT ADD COLUMN FAVORITE NUMERIC;");
         }
 
+        /*Database version 3*/
         if (oldVersion < 3) {
             db.execSQL("CREATE TABLE VEGETABLE ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -283,6 +288,11 @@ class SeasonalDatabaseHelper extends SQLiteOpenHelper {
                     "Spring, Summer, Autumn",
                     R.drawable.zucchini);
         }
+
+        /*Database version 4*/
+        if (oldVersion < 4) {
+            db.execSQL("ALTER TABLE VEGETABLE ADD COLUMN FAVORITE NUMERIC;");
+        }
     }
 
     private static void insertFruit(SQLiteDatabase db, String name, String description, String season, int resourceId) {
@@ -300,6 +310,6 @@ class SeasonalDatabaseHelper extends SQLiteOpenHelper {
         vegeValues.put("DESCRIPTION", description);
         vegeValues.put("SEASON", season);
         vegeValues.put("IMAGE_RESOURCE_ID", resourceId);
-        db.insert("FRUIT", null, vegeValues);
+        db.insert("VEGETABLE", null, vegeValues);
     }
 }
