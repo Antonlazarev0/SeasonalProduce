@@ -59,27 +59,3 @@ public class VegetableActivity extends AppCompatActivity {
 
     }
 }
-
-
-/* //Get the vegetable from the intent
-        int vegeNo = (Integer)getIntent().getExtras().get(EXTRA_VEGENO);
-        Vegetable vegetable = Vegetable.vegetables[vegeNo];
-
-        //Populate the vegetable image
-        ImageView photo = (ImageView) findViewById(R.id.photo);
-        photo.setImageResource(vegetable.getImageResourceId());
-        photo.setContentDescription(vegetable.getName());
-
-        //Populate the vegetable name
-        TextView name = (TextView) findViewById(R.id.name);
-        name.setText(vegetable.getName());
-
-        //Populate seasons
-        TextView seasons = (TextView) findViewById(R.id.seasons);
-        seasons.setText(vegetable.getSeason());
-
-        //Populate the vegetable description
-        TextView description = (TextView) findViewById(R.id.description);
-        description.setText(vegetable.getDescription());
-
-*/

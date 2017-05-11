@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -59,6 +58,3 @@ public class FruitCategoryActivity extends ListActivity {
         startActivity(intent);
     }
 }
-
-     /*  ArrayAdapter<Fruit> listAdapter = new ArrayAdapter<Fruit>(this, android.R.layout.simple_list_item_1, Fruit.fruits);
-        listProduce.setAdapter(listAdapter);*/

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 class SeasonalDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "seasonal"; //name of database
-    private static final int DB_VERSION = 1; //database version
+    private static final int DB_VERSION = 4; //database version
 
     SeasonalDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
