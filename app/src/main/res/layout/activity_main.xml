@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.azza.seasonalproduce.MainActivity">
 
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="226dp"
         android:src="@drawable/logo"
         android:contentDescription="@string/seasonal_logo"/>
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="133dp"
         android:id="@+id/produce_options"
-        android:entries="@array/options"
-        >
+        android:entries="@array/options" />
 
-    </ListView>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/favorite_fruit"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/list_favourite_fruit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="false"
+        android:isScrollContainer="false" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/favorite_vegetable"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_favourite_vegetable"/>
 
 </LinearLayout>
+</ScrollView>
