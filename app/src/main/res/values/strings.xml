@@ -9,4 +9,6 @@
     <string name="title_activity_produce_category">ProduceCategoryActivity</string>
     <string name="seasonal_logo">Seasonal Produce Logo</string>
     <string name="favorite">Favorite</string>
+    <string name="favorite_fruit">Favorite fruits:</string>
+    <string name="favorite_vegetable">Favorite vegetables:</string>
 </resources>
