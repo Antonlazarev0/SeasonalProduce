@@ -112,5 +112,39 @@ public class MainActivity extends AppCompatActivity {
         db.close();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        try {
+            SeasonalDatabaseHelper seasonalDatabaseHelper = new SeasonalDatabaseHelper(this);
+            db = seasonalDatabaseHelper.getReadableDatabase();
+            Cursor newCursor = db.query("FRUIT",
+                    new String[] { "_id", "NAME"},
+                    "FAVORITE = 1",
+                    null, null, null, null);
+            ListView listFavoriteFruit = (ListView) findViewById(R.id.list_favourite_fruit);
+            CursorAdapter adapter = (CursorAdapter) listFavoriteFruit.getAdapter();
+            adapter.changeCursor(newCursor);
+            favoritesCursor = newCursor;
+        } catch (SQLiteException e) {
+            Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
+            toast.show();
+        }
 
+        try {
+            SeasonalDatabaseHelper seasonalDatabaseHelper = new SeasonalDatabaseHelper(this);
+            db = seasonalDatabaseHelper.getReadableDatabase();
+            Cursor newCursor = db.query("VEGETABLE",
+                    new String[] { "_id", "NAME"},
+                    "FAVORITE = 1",
+                    null, null, null, null);
+            ListView listFavoriteVegetable = (ListView) findViewById(R.id.list_favourite_vegetable);
+            CursorAdapter adapter = (CursorAdapter) listFavoriteVegetable.getAdapter();
+            adapter.changeCursor(newCursor);
+            favoritesCursor = newCursor;
+        } catch (SQLiteException e) {
+            Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 }

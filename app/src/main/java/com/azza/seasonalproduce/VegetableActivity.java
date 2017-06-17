@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -66,19 +67,38 @@ public class VegetableActivity extends AppCompatActivity {
     }
 
     public void onFavoriteClicked(View view) {
-        int vegeNo = (int) getIntent().getExtras().get("vegeNo");
-        CheckBox favorite = (CheckBox) findViewById(R.id.favorite);
-        ContentValues vegeValues = new ContentValues();
-        vegeValues.put("FAVORITE", favorite.isChecked());
-        SQLiteOpenHelper seasonalDatabaseHelper = new SeasonalDatabaseHelper(VegetableActivity.this);
+        int vegeNo = (int) getIntent().getExtras().get(EXTRA_VEGENO);
+        new UpdateVegetableTask().execute(vegeNo);
+    }
 
-        try {
-            SQLiteDatabase db = seasonalDatabaseHelper.getWritableDatabase();
-            db.update("VEGETABLE", vegeValues, "_id = ?", new String[]{Integer.toString(vegeNo)});
-            db.close();
-        } catch (SQLiteException e) {
-            Toast toast = Toast.makeText(this, " Database unavailable", Toast.LENGTH_SHORT);
-            toast.show();
+    private class UpdateVegetableTask extends AsyncTask<Integer, Void, Boolean> {
+        ContentValues vegeValues;
+
+        protected void onPreExecute() {
+            CheckBox favorite = (CheckBox) findViewById(R.id.favorite);
+            vegeValues = new ContentValues();
+            vegeValues.put("FAVORITE", favorite.isChecked());
+        }
+
+        protected Boolean doInBackground(Integer... vege) {
+            int vegeNo = vege[0];
+            SQLiteOpenHelper seasonalDatabaseHelper = new SeasonalDatabaseHelper(VegetableActivity.this);
+
+            try {
+                SQLiteDatabase db = seasonalDatabaseHelper.getWritableDatabase();
+                db.update("VEGETABLE", vegeValues, "_id = ?", new String[]{Integer.toString(vegeNo)});
+                db.close();
+                return true;
+            } catch (SQLiteException e) {
+                return false;
+            }
+        }
+
+        protected void onPostExecute(Boolean success) {
+            if(!success) {
+                Toast toast = Toast.makeText(VegetableActivity.this, " Database unavailable", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
     }
 }
