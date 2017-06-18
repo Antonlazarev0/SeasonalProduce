@@ -10,25 +10,31 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="255dp"
+        android:layout_height="225dp"
         android:id="@+id/photo"
+        android:padding="5dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name"
+        android:padding="5dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/season"
+        android:padding="5dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/description"
+        android:padding="5dp"
         />
 
     <CheckBox
@@ -36,6 +42,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/favorite"
         android:text="@string/favorite"
-        android:onClick="onFavoriteClicked"/>
+        android:onClick="onFavoriteClicked"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:text="@string/recipe_text"
+        android:paddingBottom="10dp"/>
+    <Button
+        android:autoLink="web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipe"
+        android:foreground="@drawable/index"
+
+        />
 
 </LinearLayout>

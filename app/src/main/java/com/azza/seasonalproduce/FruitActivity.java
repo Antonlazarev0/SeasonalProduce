@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ public class FruitActivity extends AppCompatActivity {
             SQLiteOpenHelper seasonalDatabaseHelper = new SeasonalDatabaseHelper(this);
             SQLiteDatabase db = seasonalDatabaseHelper.getWritableDatabase();
             Cursor cursor = db.query("FRUIT",
-                                        new String[] {"NAME", "DESCRIPTION", "SEASON", "IMAGE_RESOURCE_ID", "FAVORITE"},
+                                        new String[] {"NAME", "DESCRIPTION", "SEASON", "IMAGE_RESOURCE_ID", "FAVORITE", "RECIPE"},
                                         "_id = ?",
                                         new String[] {Integer.toString(fruitNo)},
                                         null, null, null);
@@ -41,6 +42,7 @@ public class FruitActivity extends AppCompatActivity {
                 String seasonText = cursor.getString(2);
                 int photoId = cursor.getInt(3);
                 boolean isFavorite = (cursor.getInt(4) == 1);
+                String recipeText = cursor.getString(5);
 
                 TextView name = (TextView) findViewById(R.id.name);
                 name.setText(nameText);
@@ -57,6 +59,9 @@ public class FruitActivity extends AppCompatActivity {
 
                 CheckBox favorite = (CheckBox) findViewById(R.id.favorite);
                 favorite.setChecked(isFavorite);
+
+                Button recipe = (Button) findViewById(R.id.recipe);
+                recipe.setText(recipeText);
             }
             cursor.close();
             db.close();
