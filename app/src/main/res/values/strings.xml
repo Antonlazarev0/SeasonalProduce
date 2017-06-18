@@ -12,4 +12,5 @@
     <string name="favorite_fruit">Favorite fruits:</string>
     <string name="favorite_vegetable">Favorite vegetables:</string>
     <string name="recipe_text">Recipes:</string>
+    <string name="produce_description">Produce picture</string>
 </resources>

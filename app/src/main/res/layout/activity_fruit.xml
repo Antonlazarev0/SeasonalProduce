@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +12,7 @@
         android:layout_height="225dp"
         android:id="@+id/photo"
         android:padding="5dp"
-        />
+        android:contentDescription="@string/produce_description" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,21 +42,20 @@
         android:id="@+id/favorite"
         android:text="@string/favorite"
         android:onClick="onFavoriteClicked"
-        android:padding="20dp"/>
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:text="@string/recipe_text"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="10dp"/>
     <Button
         android:autoLink="web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/recipe"
         android:foreground="@drawable/index"
-        android:paddingTop="20dp"
         />
 
 </LinearLayout>
