@@ -10,12 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
-import android.widget.GridView;
+import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     private SQLiteDatabase db;
     private Cursor favoritesCursor;
@@ -23,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.OnActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.summerButton).setOnClickListener(this);
+        findViewById(R.id.autumnButton).setOnClickListener(this);
+        findViewById(R.id.winterButton).setOnClickListener(this);
+        findViewById(R.id.springButton).setOnClickListener(this);
 
         //Create onclicklistener
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
@@ -103,6 +109,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.summerButton:
+                Utils.changeToTheme(this, Utils.THEME_SUMMER);
+                break;
+            case R.id.autumnButton:
+                Utils.changeToTheme(this, Utils.THEME_AUTUMN);
+                break;
+            case R.id.winterButton:
+                Utils.changeToTheme(this, Utils.THEME_WINTER);
+                break;
+            case R.id.springButton:
+                Utils.changeToTheme(this, Utils.THEME_SPRING);
+                break;
+        }
+    }
+
     //Close the cursor and database in the onDestroy()
 
     @Override
@@ -147,4 +171,6 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         }
     }
+
+
 }

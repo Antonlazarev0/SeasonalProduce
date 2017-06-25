@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#f0e056</color>
+    <color name="colorPrimaryDark">#da5a04</color>
+    <color name="colorAccent">#94892d</color>
+
+    <color name="primary_material_autumn">#fc3e03</color>
+    <color name="primary_dark_material_autumn">#a23d03</color>
+    <color name="accent_material_autumn">#515002</color>
+
+    <color name="primary_material_winter">#9e9e9e</color>
+    <color name="primary_dark_material_winter">#6cc9d7</color>
+    <color name="accent_material_winter">#5e81e7</color>
+
+    <color name="primary_material_spring">#2ce906</color>
+    <color name="primary_dark_material_spring">#84a316</color>
+    <color name="accent_material_spring">#1403d3</color>
+
 </resources>

@@ -1,11 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +14,31 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SummerTheme" parent="AppTheme" >
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AutumnTheme" parent="AppTheme" >
+        <item name="colorPrimary">@color/primary_material_autumn</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_autumn</item>
+        <item name="colorAccent">@color/accent_material_autumn</item>
+    </style>
+
+    <style name="WinterTheme" parent="AppTheme" >
+        <item name="colorPrimary">@color/primary_material_winter</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_winter</item>
+        <item name="colorAccent">@color/accent_material_winter</item>
+    </style>
+
+    <style name="SpringTheme" parent="AppTheme" >
+        <item name="colorPrimary">@color/primary_material_spring</item>
+        <item name="colorPrimaryDark">@color/primary_dark_material_spring</item>
+        <item name="colorAccent">@color/accent_material_spring</item>
+    </style>
+
+
 
 </resources>

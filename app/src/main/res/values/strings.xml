@@ -13,4 +13,9 @@
     <string name="favorite_vegetable">Favorite vegetables:</string>
     <string name="recipe_text">Recipes:</string>
     <string name="produce_description">Produce picture</string>
+    <string name="summer">Summer</string>
+    <string name="theme">Themes</string>
+    <string name="autumn">autumn</string>
+    <string name="winter">Winter</string>
+    <string name="spring">Spring</string>
 </resources>

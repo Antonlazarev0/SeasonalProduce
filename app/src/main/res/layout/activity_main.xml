@@ -11,20 +11,56 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="226dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo"
         android:contentDescription="@string/seasonal_logo"/>
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:layout_height="100dp"
         android:id="@+id/produce_options"
         android:entries="@array/options" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/themeText"
+        android:text="@string/theme"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/summerButton"
+            android:text="@string/summer"
+            android:onClick="onClick"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/autumnButton"
+            android:text="@string/autumn"
+            android:onClick="onClick"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/winterButton"
+            android:text="@string/winter"
+            android:onClick="onClick"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/springButton"
+            android:text="@string/spring"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/favorite_fruit"
         />
 
@@ -32,7 +68,6 @@
         android:id="@+id/list_favourite_fruit"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-
          />
 
     <TextView
